@@ -10,7 +10,5 @@ The date is in a CSV file format which could be opened with any Office software.
 ![Screenshot 2024-08-28 083508](https://github.com/user-attachments/assets/905b70bd-ff58-4378-9158-a06ad05413fb)
 
 ![20240828_062618 - Copy](https://github.com/user-attachments/assets/a26205e3-3552-4827-8e55-8889f97cc5c1)
-
-![20240828_062714](https://github.com/user-attachments/assets/a4989b7f-26ef-4dd6-abaa-ede707881eb5)
 ![20240828_062618](https://github.com/user-attachments/assets/33001cb0-82e6-49d3-aacd-ae88e653e0f6)
 
