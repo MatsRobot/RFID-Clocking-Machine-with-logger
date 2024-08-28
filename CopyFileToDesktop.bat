@@ -12,4 +12,4 @@ set month=%date:~3,2%
 set day=%date:~0,2%
 set timestamp="%volume%- %year%%month%%day%"
 
-copy ESIGN.CSV C:\Users\HP\Desktop\eSign-%timestamp%.CSV
+copy ESIGN.CSV %userprofile%\Desktop\eSign-%timestamp%.CSV
