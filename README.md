@@ -28,4 +28,4 @@ The full size SD card reader was used as the limitation appears to be 2GB, so an
 The initial design used an LCD display, however they use a lot of battery and the final design was based on an OLED.
 Working with OLED allowed the ability to create RFID Logo, Battery sign and other characters such as the degree sign that is not available in the standard character set. 
 
-3x3 characters (1-9) of the 8x8 character font sets were changed to represent the logo. Spreadsheet template was used to calculate the required values for each of the nine characters.
+3x3 characters (1-9) of the 8x8 character font sets were changed to represent the logo. Spreadsheet template (LogoMaker-48x48 - RFID.xlsx) which is included in the libraries in the MatsRobotFont8x8 font directory was used to calculate the required values for each of the nine characters.
