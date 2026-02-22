@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://matsrobot.github.io/Favicon-192.png" sizes="192x192">
+    
+    <title>RFID Clocking Machine & Logger | MatsRobot</title>
+    <meta name="description" content="High-reliability portable RFID logging solution with data stability and tamper-proof authentication. Developed for care agencies and race monitoring.">
+    
+    <link rel="canonical" href="https://github.com/MatsRobot/RFID-Clocking-Machine-with-logger" />
+
+    <style>
+        :root {
+            --gh-green: #238636;
+            --gh-green-hover: #2ea44f;
+            --gh-dark: #24292e;
+            --gh-blue: #0366d6;
+            --gh-border: #eaecef;
+            --gh-bg-gray: #f6f8fa;
+            --note-bg: #fffbdd;
+            --note-border: #d4a017;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.6; color: var(--gh-dark); max-width: 950px; margin: 0 auto; padding: 2rem; 
+        }
+
+        /* RESTORED HERO LAYOUT */
+        .hero-section { display: flex; gap: 2.5rem; margin-bottom: 2rem; align-items: center; }
+        .hero-text { flex: 3; }
+        .image-sidebar { 
+            flex: 2; border: 1px solid var(--gh-border); border-radius: 8px; 
+            padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center;
+        }
+        .image-sidebar img { max-width: 100%; height: auto; border-radius: 4px; }
+        
+        .caption { font-size: 0.85rem; color: #586069; margin-top: 10px; display: block; }
+
+        h1 { font-size: 1.8rem; margin-top: 0; }
+        h2 { color: var(--gh-blue); border-bottom: 1px solid var(--gh-border); padding-bottom: 0.3em; margin-top: 2rem; }
+        h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+        .note { 
+            background-color: var(--note-bg); padding: 1.25rem; border-left: 5px solid var(--note-border); 
+            margin: 1.5rem 0; border-radius: 4px;
+        }
+
+        /* RESTORED BUTTON STYLE */
+        .btn-download { 
+            background-color: var(--gh-green); color: white; padding: 12px 28px; 
+            text-decoration: none; border-radius: 6px; display: inline-flex; 
+            align-items: center; gap: 18px; font-weight: 600; transition: background 0.2s;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+        }
+
+        .btn-download:hover { background-color: var(--gh-green-hover); }
+        .btn-text-container { display: flex; flex-direction: column; line-height: 1.1; }
+        .btn-main { font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .btn-sub-lines { font-size: 0.75rem; font-weight: 400; opacity: 0.9; }
+
+        .tech-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .tech-table th, .tech-table td { padding: 12px; border: 1px solid var(--gh-border); }
+        .tech-table th { background-color: var(--gh-bg-gray); text-align: left; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+
+        code { background-color: var(--gh-bg-gray); padding: 0.2em 0.4em; border-radius: 3px; font-family: monospace; }
+
+        footer { 
+            margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--gh-border); 
+            text-align: center; color: #6a737d; font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section, .grid { flex-direction: column; }
+            .hero-text { order: 2; }
+            .image-sidebar { order: 1; width: 100%; }
+            .btn-download { width: 100%; justify-content: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1>🕒 Portable RFID Clocking Machine & Logger</h1>
+            <p>A high-reliability, low-power portable logging solution designed for time-attendance tracking and race waypoint monitoring. This system integrates 125KHz RFID telemetry with <strong>ATmega328P deterministic memory management</strong>.</p>
+            
+            <div class="note">
+                <strong>Tamper-Proof Design:</strong> Developed for care agencies to verify worker attendance, this device utilizes a physical handshake between the logger and site-fixed tags to prevent remote log falsification.
+            </div>
+
+            <a href="https://github.com/MatsRobot/RFID-Clocking-Machine-with-logger" class="btn-download">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <div class="btn-text-container">
+                    <span class="btn-main">Get Source Code</span>
+                    <div class="btn-sub-lines">
+                        <span>Firmware, Custom Fonts & Schematics</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="image-sidebar">
+            <img src="https://github.com/user-attachments/assets/79eed358-6a81-447c-b9f7-1024a7ddc5df" alt="RFID Logger Main Unit">
+            <span class="caption">Final Hardware Build</span>
+        </div>
+    </div>
+
+    <h2>How It Works: Data Integrity & Validation</h2>
+    <p>To ensure logs cannot be falsified or corrupted, the system employs a dual-stream recording method and hardware-level stabilization:</p>
+    <ul>
+        <li><strong>Authenticity Verification:</strong> Each log entry includes the RFID UID, high-precision timestamp, ambient temperature, and battery voltage for audit trailing.</li>
+        <li><strong>DS3231 RTC Integration:</strong> By utilizing a temperature-compensated crystal oscillator (TCXO), the system eliminates clock drift caused by outdoor environmental variance.</li>
+        <li><strong>SD Bus Management:</strong> Implements a synchronous write-ahead protocol to ensure <code>.CSV</code> stability on FAT32 partitions during low-battery events.</li>
+    </ul>
+
+    
+
+    <h2>Technical Specifications</h2>
+    <table class="tech-table">
+        <thead>
+            <tr><th>Component</th><th>Engineering Specification</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Microcontroller</strong></td><td>Arduino Nano (8-bit AVR RISC @ 16MHz)</td></tr>
+            <tr><td><strong>RFID Module</strong></td><td>RDM6300 (125KHz UART / Inductive Coupling)</td></tr>
+            <tr><td><strong>Timekeeping</strong></td><td>DS3231 (High-Precision I2C / ±2ppm Accuracy)</td></tr>
+            <tr><td><strong>Storage</strong></td><td>Full-size SD Card (SPI interface / FAT16-32)</td></tr>
+            <tr><td><strong>Display</strong></td><td>0.96" SSD1306 OLED (I2C Buffer-less Rendering)</td></tr>
+            <tr><td><strong>Power</strong></td><td>MT3608 DC-DC Step-Up (Stable 5V Rail)</td></tr>
+        </tbody>
+    </table>
+
+    <div class="grid">
+        <div>
+            <h3>Zero-Heap RAM Management</h3>
+            <p>To operate within 2KB of SRAM, the codebase replaces the <code>String</code> library with memory-stable <strong>Char Arrays</strong>. This prevents heap fragmentation and system crashes during 24+ hour deployment cycles.</p>
+        </div>
+        <div>
+            <h3>Custom Font Graphics</h3>
+            <p>Utilizes a bespoke 48x48 RFID logo created by remapping characters in the 8x8 font set. This "Text-as-Graphic" method saves 800+ bytes of memory compared to a standard bitmap splash screen.</p>
+        </div>
+    </div>
+
+    <h2>Engineering Challenges & Solutions</h2>
+    <ul>
+        <li><strong>Clock Drift:</strong> Swapping the DS1307 for the DS3231 reduced timing errors from minutes-per-week to seconds-per-year.</li>
+        <li><strong>Stable Rails:</strong> The DC-DC boost converter ensures a rock-solid 5V rail for the SD card and RFID reader even as the AAA battery voltage drops to 0.9V per cell.</li>
+        <li><strong>Data Format:</strong> Standard <code>RFC 4180</code> CSV output allows for instant integration into existing administrative spreadsheets without parsing software.</li>
+    </ul>
+
+    <footer>
+        <p>© 2026 MatsRobot - Part of the Open Source Robotics Initiative</p>
+        <p><small>Copyright (c) 2026 | Licensed under the <a href="https://github.com/MatsRobot/matsrobot.github.io/blob/main/LICENSE" style="color: #6a737d;">MIT License</a></small></p>
+    </footer>
+
+</body>
+</html>
